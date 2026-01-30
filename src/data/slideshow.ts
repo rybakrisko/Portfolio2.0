@@ -1,0 +1,18 @@
+export const slideshowImages = [
+  '/slideshow/sam-1135.jpeg',
+  '/slideshow/img-5993.jpg',
+  '/slideshow/0b85575d-5dfa-4276-8784-fa16b7d71788.jpg',
+  '/slideshow/stuzkova-lyceum-10-10-2025-68.jpg',
+  '/slideshow/img-1675.jpg',
+  '/slideshow/img-1668.jpg',
+  '/slideshow/img-3003-2.jpg',
+  '/slideshow/img-5533.jpg',
+  '/slideshow/img-9164-2.jpg',
+  '/slideshow/img-4753.jpg',
+  '/slideshow/img-3540-3.jpg',
+  '/slideshow/img-9072.jpg',
+  '/slideshow/img-6692.png',
+  '/slideshow/0e3b3304-e9ea-4199-bf86-17a782c67d87.jpg',
+  '/slideshow/img-1673.jpg',
+  '/slideshow/img-1669.jpg',
+]

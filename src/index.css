@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-sand text-ink antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  :root {
+    color-scheme: light;
+    --shadow-soft: 0 20px 40px -30px rgba(11, 18, 32, 0.45);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in;
+  }
+
+  .animate-fade-in-delay {
+    animation: fadeIn 0.6s ease-in 0.2s both;
+  }
+
+  .hero-glow::before {
+    content: '';
+    position: absolute;
+    inset: -20% 40% auto auto;
+    height: 320px;
+    width: 320px;
+    background: radial-gradient(circle at center, rgba(255, 107, 53, 0.45), transparent 70%);
+    filter: blur(12px);
+    z-index: 0;
+  }
+
+  .hero-glow::after {
+    content: '';
+    position: absolute;
+    inset: auto auto -20% -10%;
+    height: 280px;
+    width: 280px;
+    background: radial-gradient(circle at center, rgba(20, 184, 166, 0.35), transparent 70%);
+    filter: blur(12px);
+    z-index: 0;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(11, 18, 32, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(11, 18, 32, 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .skip-link {
+    @apply absolute left-4 top-4 z-50 -translate-y-16 bg-ink text-cream px-4 py-2 rounded-full shadow-lg transition-transform focus:translate-y-0;
+  }
+
+  .card-shadow {
+    box-shadow: var(--shadow-soft);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
