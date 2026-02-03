@@ -27,7 +27,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-cloud dark:bg-ink/90 dark:border-cream/10">
+    <header className="sticky top-0 z-50 relative bg-cream/90 backdrop-blur-md border-b border-cloud dark:bg-ink/90 dark:border-cream/10">
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center">
@@ -79,6 +79,7 @@ export default function Header() {
               className="md:hidden p-2 rounded-full hover:bg-cloud transition-colors dark:hover:bg-cream/10"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={text.menuToggle}
+              aria-controls="mobile-menu"
               aria-expanded={mobileMenuOpen}
             >
               <svg
