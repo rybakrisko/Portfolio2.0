@@ -1,48 +1,23 @@
-export type SkillCategory = {
-  name: string
-  technologies: string[]
+export type SoftSkill = {
+  title: string
+  description: string
 }
 
-export const skills: SkillCategory[] = [
+export const skills: SoftSkill[] = [
   {
-    name: 'Communication',
-    technologies: [
-      'Clarity',
-      'Stakeholder alignment',
-      'Documentation',
-      'Presentation',
-      'Active listening',
-    ],
+    title: 'Communication',
+    description: 'Clarity, active listening, and presentation that keep stakeholders aligned and documentation useful.',
   },
   {
-    name: 'Problem solving',
-    technologies: [
-      'Root cause analysis',
-      'Structured thinking',
-      'Decision-making',
-      'Risk assessment',
-      'Systems thinking',
-    ],
+    title: 'Problem solving',
+    description: 'Root cause analysis, structured thinking, and risk assessment to support confident decision-making.',
   },
   {
-    name: 'Collaboration',
-    technologies: [
-      'Teamwork',
-      'Feedback loops',
-      'Ownership',
-      'Leadership',
-      'Accountability',
-      'Mentoring',
-    ],
+    title: 'Collaboration',
+    description: 'Teamwork, feedback loops, and accountability with ownership, leadership, and mentoring.',
   },
   {
-    name: 'Execution & discipline',
-    technologies: [
-      'Focus',
-      'Consistency',
-      'Prioritization',
-      'Resilience',
-      'Iteration',
-    ],
+    title: 'Execution & discipline',
+    description: 'Focus, prioritization, and consistency with resilience and iteration to ship on time.',
   },
 ]

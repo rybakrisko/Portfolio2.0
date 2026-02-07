@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import SectionTitle from '../components/ui/SectionTitle'
 import SocialLinks from '../components/ui/SocialLinks'
 import Button from '../components/ui/Button'
@@ -6,31 +5,6 @@ import { socialLinks } from '../data/contact'
 import { text } from '../i18n/translations'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
-
-    try {
-      // TODO: E-Mail-Versand per API oder E-Mail-Service implementieren.
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', message: '' })
-    } catch (error) {
-      setSubmitStatus('error')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
   return (
     <div className="section-padding bg-sand dark:bg-ink">
       <div className="container-custom">
@@ -54,6 +28,12 @@ export default function Contact() {
                   </a>
                 </p>
                 <p>
+                  <strong>{text.contactPhone}:</strong><br />
+                  <a href="tel:+421907841353" className="text-ink hover:underline dark:text-cream">
+                    0907 841 353
+                  </a>
+                </p>
+                <p>
                   <strong>{text.contactLocation}:</strong><br />
                   {text.contactLocationValue}
                 </p>
@@ -68,17 +48,29 @@ export default function Contact() {
             </div>
 
             <div>
-              <form onSubmit={handleSubmit} className="space-y-6 bg-cream border border-cloud rounded-2xl p-8 dark:bg-slateBlue dark:border-cream/10">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                className="space-y-6 bg-cream border border-cloud rounded-2xl p-8 dark:bg-slateBlue dark:border-cream/10"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label htmlFor="bot-field">
+                    Don’t fill this out: <input id="bot-field" name="bot-field" />
+                  </label>
+                </p>
+
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-inkSoft mb-2 dark:text-cream/70">
                     {text.contactName} *
                   </label>
                   <input
                     id="name"
+                    name="name"
                     type="text"
                     required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 border border-cloud rounded-xl focus:outline-none focus:ring-2 focus:ring-accent bg-sand dark:bg-ink/60 dark:border-cream/10 dark:text-cream"
                   />
                 </div>
@@ -89,10 +81,9 @@ export default function Contact() {
                   </label>
                   <input
                     id="email"
+                    name="email"
                     type="email"
                     required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3 border border-cloud rounded-xl focus:outline-none focus:ring-2 focus:ring-accent bg-sand dark:bg-ink/60 dark:border-cream/10 dark:text-cream"
                   />
                 </div>
@@ -103,33 +94,15 @@ export default function Contact() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={6}
                     required
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-3 border border-cloud rounded-xl focus:outline-none focus:ring-2 focus:ring-accent resize-none bg-sand dark:bg-ink/60 dark:border-cream/10 dark:text-cream"
                   />
                 </div>
 
-                {submitStatus === 'success' && (
-                  <div className="p-4 bg-teal/10 border border-teal/40 rounded-xl text-ink dark:text-cream">
-                    {text.contactSuccess}
-                  </div>
-                )}
-
-                {submitStatus === 'error' && (
-                  <div className="p-4 bg-accent/10 border border-accent/40 rounded-xl text-ink dark:text-cream">
-                    {text.contactError}
-                  </div>
-                )}
-
-                <Button
-                  type="submit"
-                  variant="primary"
-                  className="w-full"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? text.contactSubmitting : text.contactSubmit}
+                <Button type="submit" variant="primary" className="w-full">
+                  {text.contactSubmit}
                 </Button>
               </form>
             </div>

@@ -52,7 +52,7 @@ export default function Hero() {
           <div className="relative aspect-[4/5] animate-fade-in-delay">
             <div className="absolute -right-6 -top-6 h-full w-full rounded-[32px] border border-ink/10 bg-sand/80 dark:border-cream/10 dark:bg-ink/40" aria-hidden="true" />
             <img
-              src="/IMG_6692.jpg"
+              src="/headsohot_profile_photo.png"
               alt={text.heroAlt}
               className="relative rounded-[28px] object-cover shadow-2xl w-full h-full animate-[floatSlow_6s_ease-in-out_infinite]"
             />
