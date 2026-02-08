@@ -54,7 +54,7 @@ export const text = {
   timelineFilterEducation: 'Education & Experiences',
   timelineFilterSport: 'Sport',
   contactTitle: 'Contact',
-  contactSubtitle: "Have a question? Let's connect.",
+  contactSubtitle: "Have a question or want to collaborate? Let’s connect.",
   contactInfo: 'Info',
   contactEmail: 'Email',
   contactPhone: 'Phone',

@@ -1,7 +1,4 @@
 import SectionTitle from '../components/ui/SectionTitle'
-import SocialLinks from '../components/ui/SocialLinks'
-import Button from '../components/ui/Button'
-import { socialLinks } from '../data/contact'
 import { text } from '../i18n/translations'
 
 export default function Contact() {
@@ -15,98 +12,108 @@ export default function Contact() {
             className="mb-12"
           />
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-display font-semibold mb-4 text-ink dark:text-cream">
-                {text.contactInfo}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+            <div className="lg:col-span-2 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
+              <h3 className="text-lg font-display font-semibold text-ink dark:text-cream">
+                Email
               </h3>
-              <div className="space-y-4 text-inkSoft dark:text-cream/70">
-                <p>
-                  <strong>{text.contactEmail}:</strong><br />
-                  <a href="mailto:rybak.riso@gmail.com" className="text-ink hover:underline dark:text-cream">
-                    rybak.riso@gmail.com
-                  </a>
-                </p>
-                <p>
-                  <strong>{text.contactPhone}:</strong><br />
-                  <a href="tel:+421907841353" className="text-ink hover:underline dark:text-cream">
-                    0907 841 353
-                  </a>
-                </p>
-                <p>
-                  <strong>{text.contactLocation}:</strong><br />
-                  {text.contactLocationValue}
-                </p>
-              </div>
-
-              <div className="mt-8">
-                <h4 className="text-xl font-display font-semibold mb-4 text-ink dark:text-cream">
-                  {text.contactSocial}
-                </h4>
-                <SocialLinks links={socialLinks} />
-              </div>
+              <p className="mt-2 text-sm leading-relaxed text-inkSoft dark:text-cream/70">
+                For formal communication.
+              </p>
+              <a
+                href="mailto:rybak.riso@gmail.com"
+                className="mt-auto pt-6 inline-flex max-w-full truncate text-sm sm:text-base font-semibold text-ink transition-colors hover:text-ink/70 hover:underline underline-offset-4 dark:text-cream dark:hover:text-cream/80"
+              >
+                rybak.riso@gmail.com
+              </a>
             </div>
 
-            <div>
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                className="space-y-6 bg-cream border border-cloud rounded-2xl p-8 dark:bg-slateBlue dark:border-cream/10"
+            <div className="lg:col-span-2 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
+              <h3 className="text-lg font-display font-semibold text-ink dark:text-cream">
+                Phone
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-inkSoft dark:text-cream/70">
+                For quick coordination.
+              </p>
+              <a
+                href="tel:+421907841353"
+                className="mt-auto pt-6 inline-flex text-sm sm:text-base font-semibold text-ink transition-colors hover:text-ink/70 hover:underline underline-offset-4 dark:text-cream dark:hover:text-cream/80"
               >
-                <input type="hidden" name="form-name" value="contact" />
-                <p className="hidden">
-                  <label htmlFor="bot-field">
-                    Don’t fill this out: <input id="bot-field" name="bot-field" />
-                  </label>
-                </p>
+                +421 907 841 353
+              </a>
+            </div>
 
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-inkSoft mb-2 dark:text-cream/70">
-                    {text.contactName} *
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    className="w-full px-4 py-3 border border-cloud rounded-xl focus:outline-none focus:ring-2 focus:ring-accent bg-sand dark:bg-ink/60 dark:border-cream/10 dark:text-cream"
-                  />
-                </div>
+            <div className="lg:col-span-2 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
+              <h3 className="text-lg font-display font-semibold text-ink dark:text-cream">
+                LinkedIn
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-inkSoft dark:text-cream/70">
+                Professional profile.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/richard-rybak-3663792b7/"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-auto pt-6 inline-flex text-sm sm:text-base font-semibold text-ink transition-colors hover:text-ink/70 hover:underline underline-offset-4 dark:text-cream dark:hover:text-cream/80"
+              >
+                View LinkedIn
+              </a>
+            </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-inkSoft mb-2 dark:text-cream/70">
-                    {text.contactEmail} *
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    className="w-full px-4 py-3 border border-cloud rounded-xl focus:outline-none focus:ring-2 focus:ring-accent bg-sand dark:bg-ink/60 dark:border-cream/10 dark:text-cream"
-                  />
-                </div>
+            <div className="lg:col-span-2 lg:col-start-2 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
+              <h3 className="text-lg font-display font-semibold text-ink dark:text-cream">
+                Location
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-inkSoft dark:text-cream/70">
+                Originally from
+              </p>
+              <a
+                href="https://www.google.com/maps?q=Bratislava,+Slovakia"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-auto pt-6 inline-flex text-sm sm:text-base font-semibold text-ink transition-colors hover:text-ink/70 hover:underline underline-offset-4 dark:text-cream dark:hover:text-cream/80"
+              >
+                {text.contactLocationValue}
+              </a>
+            </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-inkSoft mb-2 dark:text-cream/70">
-                    {text.contactMessage} *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    required
-                    className="w-full px-4 py-3 border border-cloud rounded-xl focus:outline-none focus:ring-2 focus:ring-accent resize-none bg-sand dark:bg-ink/60 dark:border-cream/10 dark:text-cream"
-                  />
-                </div>
-
-                <Button type="submit" variant="primary" className="w-full">
-                  {text.contactSubmit}
-                </Button>
-              </form>
+            <div className="lg:col-span-2 lg:col-start-4 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
+              <h3 className="text-lg font-display font-semibold text-ink dark:text-cream">
+                CV
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-inkSoft dark:text-cream/70">
+                Experience overview.
+              </p>
+              <a
+                href="/cv.pdf"
+                download
+                className="mt-auto pt-6 inline-flex text-sm sm:text-base font-semibold text-ink transition-colors hover:text-ink/70 hover:underline underline-offset-4 dark:text-cream dark:hover:text-cream/80"
+              >
+                Download CV
+              </a>
             </div>
           </div>
+          <p className="mt-10 text-center text-sm text-inkSoft dark:text-cream/70">
+            Prefer informal communication? I’m also reachable via{' '}
+            <a
+              href="https://wa.me/421907841353"
+              target="_blank"
+              rel="noreferrer"
+              className="text-inkSoft transition-all duration-200 hover:text-ink hover:underline hover:underline-offset-4 hover:-translate-y-[1px] inline-block dark:text-cream/70 dark:hover:text-cream"
+            >
+              WhatsApp
+            </a>{' '}
+            or{' '}
+            <a
+              href="https://www.instagram.com/r_rybak_1/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-inkSoft transition-all duration-200 hover:text-ink hover:underline hover:underline-offset-4 hover:-translate-y-[1px] inline-block dark:text-cream/70 dark:hover:text-cream"
+            >
+              Instagram
+            </a>
+            .
+          </p>
         </div>
       </div>
     </div>
