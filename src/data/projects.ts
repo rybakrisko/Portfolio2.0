@@ -77,9 +77,9 @@ export const projects: Project[] = [
     title: 'Crowdfunding Campaign',
     shortDescription: 'Co-led a crowdfunding initiative focused on awareness-building through a large-scale presentation and structured messaging. The campaign combined storytelling, audience targeting, and clear value framing, resulting in funding that exceeded the original goal by over 200%.',
     tagline: 'Crowdfunding Campaign Strategy & Awareness Presentation',
-    thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    thumbnail: '/starlab_screen.png',
     images: [
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop',
+      '/starlab_screen.png',
       'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&h=800&fit=crop',
     ],
     techStack: [

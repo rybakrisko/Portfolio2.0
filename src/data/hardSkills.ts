@@ -30,6 +30,6 @@ export const hardSkills: HardSkill[] = [
   },
   {
     title: 'Basic tools & platforms',
-    description: 'Power BI, Looker Studio (foundational use).',
+    description: 'Power BI, Looker Studio (foundational use), Microsoft Word, PowerPoint, Google Slides, Figma, Canva.',
   },
 ]
