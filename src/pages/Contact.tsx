@@ -12,7 +12,7 @@ export default function Contact() {
             className="mb-12"
           />
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <div className="lg:col-span-2 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
               <h3 className="text-lg font-display font-semibold text-ink dark:text-cream">
                 Email
@@ -45,7 +45,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="lg:col-span-2 lg:col-start-2 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
+            <div className="lg:col-span-2 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
               <h3 className="text-lg font-display font-semibold text-ink dark:text-cream">
                 Location
               </h3>
@@ -62,7 +62,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="lg:col-span-2 lg:col-start-4 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
+            <div className="lg:col-span-2 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
               <h3 className="text-lg font-display font-semibold text-ink dark:text-cream">
                 CV
               </h3>
