@@ -30,21 +30,6 @@ export default function Contact() {
 
             <div className="lg:col-span-2 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
               <h3 className="text-lg font-display font-semibold text-ink dark:text-cream">
-                Phone
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-inkSoft dark:text-cream/70">
-                For quick coordination.
-              </p>
-              <a
-                href="tel:+421907841353"
-                className="mt-auto pt-6 inline-flex text-sm sm:text-base font-semibold text-ink transition-colors hover:text-ink/70 hover:underline underline-offset-4 dark:text-cream dark:hover:text-cream/80"
-              >
-                +421 907 841 353
-              </a>
-            </div>
-
-            <div className="lg:col-span-2 bg-cream border border-cloud rounded-2xl p-6 card-shadow dark:bg-slateBlue dark:border-cream/10 flex h-full flex-col">
-              <h3 className="text-lg font-display font-semibold text-ink dark:text-cream">
                 LinkedIn
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-inkSoft dark:text-cream/70">
