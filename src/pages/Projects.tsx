@@ -3,10 +3,12 @@ import SectionTitle from '../components/ui/SectionTitle'
 import ProjectCard from '../components/projects/ProjectCard'
 import { projects } from '../data/projects'
 import { text } from '../i18n/translations'
+import { useColumnCount } from '../hooks/useColumnCount'
 
 export default function Projects() {
   const [selectedFilter, setSelectedFilter] = useState<'all' | 'project' | 'experience' | 'sport'>('all')
   const sectionRef = useRef<HTMLDivElement | null>(null)
+  const columnCount = useColumnCount()
 
   const filters = [
     { id: 'all', label: text.filterAll },
@@ -19,6 +21,14 @@ export default function Projects() {
     if (selectedFilter === 'all') return projects
     return projects.filter((project) => project.group === selectedFilter)
   }, [selectedFilter])
+
+  const columns = useMemo(() => {
+    const cols: typeof filteredProjects[] = Array.from({ length: columnCount }, () => [])
+    filteredProjects.forEach((project, index) => {
+      cols[index % columnCount].push(project)
+    })
+    return cols
+  }, [filteredProjects, columnCount])
 
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -56,9 +66,13 @@ export default function Projects() {
             )
           })}
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+        <div className="flex flex-col md:flex-row gap-8">
+          {columns.map((columnProjects, colIndex) => (
+            <div key={colIndex} className="flex flex-col gap-8 flex-1">
+              {columnProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
           ))}
         </div>
       </div>
