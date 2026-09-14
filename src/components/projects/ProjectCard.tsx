@@ -9,12 +9,13 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
-  const visibleTech = isExpanded ? project.techStack : project.techStack.slice(0, 3)
-  const remainingCount = Math.max(project.techStack.length - 3, 0)
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false)
+  const visibleTech = isExpanded ? project.techStack : project.techStack.slice(0, 4)
+  const remainingCount = Math.max(project.techStack.length - 4, 0)
 
   return (
     <div className="group">
-      <div className="bg-cream rounded-2xl border border-cloud overflow-hidden transition-all duration-300 h-full flex flex-col group-hover:-translate-y-2 group-hover:border-ink/20 card-shadow dark:bg-slateBlue dark:border-cream/10 dark:group-hover:border-cream/30">
+      <div className="bg-cream rounded-2xl border border-cloud overflow-hidden transition-all duration-300 h-full md:min-h-[44.5rem] flex flex-col group-hover:-translate-y-2 group-hover:border-ink/20 card-shadow dark:bg-slateBlue dark:border-cream/10 dark:group-hover:border-cream/30">
         <div className="relative aspect-video overflow-hidden">
           <img
             src={project.thumbnail || project.images?.[0] || '/placeholder-project.jpg'}
@@ -31,10 +32,19 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <h3 className="text-2xl font-display font-semibold mb-2 text-ink group-hover:text-accent transition-colors dark:text-cream">
             {project.title}
           </h3>
-          <p className="text-inkSoft mb-4 flex-1 dark:text-cream/70">
-            {project.shortDescription}
+          <p className="text-inkSoft mb-4 flex-1 whitespace-pre-line dark:text-cream/70">
+            {isDescriptionExpanded && project.fullDescription ? project.fullDescription : project.shortDescription}
           </p>
-          <div className="flex flex-wrap gap-2">
+          {project.fullDescription && (
+            <button
+              type="button"
+              onClick={() => setIsDescriptionExpanded((prev) => !prev)}
+              className="self-start mb-4 text-sm font-medium text-accent hover:underline"
+            >
+              {isDescriptionExpanded ? 'Show less' : 'Read more'}
+            </button>
+          )}
+          <div className="flex flex-wrap content-start gap-2 min-h-[3.75rem]">
             {visibleTech.map((tech) => (
               <TechTag key={tech} name={tech} />
             ))}
