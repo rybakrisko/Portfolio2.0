@@ -58,12 +58,12 @@ export default function ProjectDetail() {
               </div>
               <div className="flex flex-wrap gap-4">
                 {project.demoUrl && (
-                  <Button variant="primary" href={project.demoUrl} target="_blank">
+                  <Button variant="primary" href={project.demoUrl}>
                     {text.projectDemo}
                   </Button>
                 )}
                 {project.githubUrl && (
-                  <Button variant="outline" href={project.githubUrl} target="_blank">
+                  <Button variant="outline" href={project.githubUrl}>
                     {text.projectGithub}
                   </Button>
                 )}
