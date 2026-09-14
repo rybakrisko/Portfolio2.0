@@ -113,5 +113,11 @@ View all in the experiences.`,
       description: 'Ongoing role focused on data analysis and end-to-end digital marketing execution: campaign strategy and performance tracking, audience research and content planning, data-informed optimization of user engagement.',
       category: 'experience',
     },
+    {
+      year: '2026-Present',
+      title: 'CODE University of Applied Sciences',
+      description: 'Business Management and Entrepreneurship',
+      category: 'education',
+    },
   ],
 }
